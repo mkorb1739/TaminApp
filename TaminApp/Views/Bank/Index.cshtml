@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TaminApp.ViewModels.Bank.BankListViewModel >
+
+<h2>بانک </h2>
+
+<a href="@Url.Action("Create", "Bank")" class="btn btn-primary">جدید</a>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>عنوان</th>
+            <th>وضعیت</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BankName  </td>
+                <td>@(item.IsActive ? "فعال" : "غیرفعال")</td>
+                  <td>
+                    <a href="@Url.Action("Edit", "Bank", new { id = item.ID   })" class="btn btn-warning">ویرایش</a>
+                    <a href="@Url.Action("Delete", "Bank", new { id = item.ID })" class="btn btn-danger">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

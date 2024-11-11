@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TaminApp.ViewModels.Degree.DegreeListViewModel>
+
+<h2>مدرک تحصیلی </h2>
+
+<a href="@Url.Action("Create", "Degree")" class="btn btn-primary">جدید</a>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>عنوان</th>
+            <th>وضعیت</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DegreeName  </td>
+                <td>@(item.IsActive ? "فعال" : "غیرفعال")</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Degree", new { id = item.ID   })" class="btn btn-warning">ویرایش</a>
+                    <a href="@Url.Action("Delete", "Degree", new { id = item.ID })" class="btn btn-danger">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

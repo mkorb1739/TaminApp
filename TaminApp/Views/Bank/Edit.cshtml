@@ -1,0 +1,36 @@
+﻿@model TaminApp.ViewModels.Bank.BankEditViewModel ;
+
+@{
+    ViewData["Title"] = "ویرایش بانک جدید";
+}
+
+<h3>ویرایش بانک جدید</h3>
+
+<form asp-action="Edit" method="post">
+    <div class="mb-3 row">
+        <label asp-for="BankName" class="col-sm-2 col-form-label">نام بانک</label>
+        <div class="col-sm-10">
+            <input asp-for="BankName" class="form-control" />
+            <span asp-validation-for="BankName" class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="IsActive" class="col-sm-2 col-form-label">فعال</label>
+        <div class="col-sm-10">
+            <input asp-for="IsActive" type="checkbox" class="form-check-input" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">ایجاد</button>
+            <a asp-action="Index" class="btn btn-secondary">بازگشت</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

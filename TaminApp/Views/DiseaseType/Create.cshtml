@@ -1,0 +1,29 @@
+﻿@model TaminApp.ViewModels.DiseaseType.DiseaseTypeCreateViewModel  ;
+
+@{
+    ViewData["Title"] = "ایجادنوع بیماری جدید";
+}
+
+<h3>ایجاد نوع بیماری جدید</h3>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3 row">
+        <label asp-for="DiseaseName " class="col-sm-2 col-form-label">نام نوع بیماری</label>
+        <div class="col-sm-10">
+            <input asp-for="DiseaseName " class="form-control" />
+            <span asp-validation-for="DiseaseName" class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">ایجاد</button>
+            <a asp-action="Index" class="btn btn-secondary">بازگشت</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

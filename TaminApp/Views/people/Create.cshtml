@@ -1,0 +1,122 @@
+﻿@model TaminApp.ViewModels.people.PeopleCreateViewModel ;
+
+@{
+    ViewData["Title"] = "ایجاد اعضاء جدید";
+}
+
+<h3>ایجاد اعضاء جدید</h3>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    </
+    <div class="mb-3 row">
+        <label asp-for="FirstName  " class="col-sm-2 col-form-label">نام </label>
+        <div class="col-sm-10">
+            <input asp-for="FirstName " class="form-control" />
+            <span asp-validation-for="FirstName  " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="LastName " class="col-sm-2 col-form-label">نام خانوادگی </label>
+        <div class="col-sm-10">
+            <input asp-for="LastName " class="form-control" />
+            <span asp-validation-for="LastName  " class="text-bg-info"></span>
+        </div>
+    </div
+   @*  <div class="mb-3 row">
+        <label asp-for="TEl " class="col-sm-2 col-form-label">کدملی  </label>
+        <div class="col-sm-10">
+            <input asp-for="TEl " class="form-control" />
+            <span asp-validation-for="TEl " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div
+        <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="NationalCode" class="col-sm-2 col-form-label">کدملی </label>
+        <div class="col-sm-10">
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode " class="text-bg-info"></span>
+        </div>
+    </div> *@
+
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">ایجاد</button>
+            <a asp-action="Index" class="btn btn-secondary">بازگشت</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

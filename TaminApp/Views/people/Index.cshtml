@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TaminApp.ViewModels.people.PeopleListViewModel  >
+
+<h2>اشخاص(اعضاء) </h2>
+
+<a href="@Url.Action("Create", "People")" class="btn btn-primary">جدید</a>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>شماره عضویت</th>
+            <th>کدملی</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>موبایل</th>
+            <th>وضعیت</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MembershipNumber  </td>
+                <td>@item.NationalCode   </td>
+                <td>@item.FirstName   </td>
+                <td>@item.LastName   </td>
+                <td>@item.mobile  </td>
+                <td>@(item.IsActive ? "فعال" : "غیرفعال")</td>
+                <td>
+                    <a href="@Url.Action("Edit", "People", new { id = item.ID   })" class="btn btn-warning">ویرایش</a>
+                    <a href="@Url.Action("Delete", "people", new { id = item.ID })" class="btn btn-danger">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
